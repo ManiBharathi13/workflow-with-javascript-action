@@ -4,7 +4,8 @@ jobs:
   format-json:
     runs-on : ubuntu-latest
     steps : 
-      -uses : fjogeleit/http-request-action@v1
+      -name : formatJson
+       uses : fjogeleit/http-request-action@v1
        with : 
         url : 'https://jsonformatter.curiousconcept.com/process'
         method : 'POST'
@@ -16,3 +17,7 @@ jobs:
           autoprocess: ,
           version: 2
         }
+      - name: Show Response
+    run: |
+      echo ${{ steps.formatJson.outputs.response }}
+      
