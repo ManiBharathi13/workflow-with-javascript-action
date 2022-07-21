@@ -17,7 +17,5 @@ jobs:
             autoprocess: ,
             version: 2
           }
-      - name: Show Response
-        run: |
-          echo ${{ steps.formatJson.outputs.response }}
+      
       
