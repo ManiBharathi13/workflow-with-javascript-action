@@ -13,7 +13,7 @@ jobs:
             data: {"Much JSON!":"So Wow!"},
             jsontemplate: 1,
             jsonspec: 4,
-            jsonfix: on,
+            jsonfix: "on",
             autoprocess: ,
             version: 2
           }'
