@@ -9,13 +9,16 @@ jobs:
         with : 
           url : 'https://jsonformatter.curiousconcept.com/process'
           method : 'POST'
-          data : {
+          data : '{
             data: {"Much JSON!":"So Wow!"},
             jsontemplate: 1,
             jsonspec: 4,
             jsonfix: on,
             autoprocess: ,
             version: 2
-          }
+          }'
+      - name : read Response
+        run : |
+          echo ${{ steps.formatJson.outputs.response }}
       
       
