@@ -22,4 +22,4 @@ jobs:
           method : 'GET'
       - name : read response as Json
         run : |
-          echo ${{ fromJson(steps.fpl.outputs.response) }}
+          echo ${{ steps.fpl.outputs.response }}
