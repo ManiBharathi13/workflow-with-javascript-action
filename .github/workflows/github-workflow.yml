@@ -9,6 +9,7 @@ jobs:
         with : 
           url : 'https://jsonformatter.curiousconcept.com/process'
           method : 'POST'
+          contentType : 'multipart/form-data'
           data : '{
             data: {"Much JSON!":"So Wow!"},
             jsontemplate: 1,
