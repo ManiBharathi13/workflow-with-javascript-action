@@ -4,7 +4,7 @@ jobs:
   format-json:
     runs-on : ubuntu-latest
     steps : 
-      -name : formatJson
+      -id : formatJson
        uses : fjogeleit/http-request-action@v1
        with : 
         url : 'https://jsonformatter.curiousconcept.com/process'
