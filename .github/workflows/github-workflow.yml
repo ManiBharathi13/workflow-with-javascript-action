@@ -1,5 +1,5 @@
 name : github-workflow
-on : workflow-dispatch
+on : workflow_dispatch
 jobs:
   format-json:
     runs-on : ubuntu-latest
