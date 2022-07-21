@@ -15,4 +15,11 @@ jobs:
         run : |
           echo ${{ steps.formatJson.outputs.response }}
       
-      
+      - id : fpl
+        uses : fjogeleit/http-request-action@v1
+        with : 
+          url : 'https://fantasy.premierleague.com/api/bootstrap-static/'
+          method : 'GET'
+      - name : read response as Json
+        run : |
+          echo ${{ fromJson(steps.fpl.outputs.response) }}
