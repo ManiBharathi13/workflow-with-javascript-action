@@ -1,0 +1,18 @@
+name : github-workflow
+on : workflow-dispatch
+jobs:
+  format-json:
+    runs-on : ubuntu-latest
+    steps : 
+      -uses : fjogeleit/http-request-action@v1
+       with : 
+        url : 'https://jsonformatter.curiousconcept.com/process'
+        method : 'POST'
+        data : {
+          data: {"Much JSON!":"So Wow!"},
+          jsontemplate: 1,
+          jsonspec: 4,
+          jsonfix: on,
+          autoprocess: ,
+          version: 2
+        }
