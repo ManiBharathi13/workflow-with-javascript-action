@@ -4,22 +4,30 @@ jobs:
   format-json:
     runs-on : ubuntu-latest
     steps : 
-      - id : formatJson
-        uses : fjogeleit/http-request-action@v1
-        with : 
-          url : 'https://jsonformatter.curiousconcept.com/process'
-          method : 'POST'
-          contentType : 'multipart/form-data'
-          data : '{"data":{"Much JSON!":"So Wow!"},"jsontemplate":1,"jsonspec":4,"jsonfix":"on","version":2}'
-      - name : read Response
-        run : |
-          echo ${{ steps.formatJson.outputs.response }}
+      # - id : formatJson
+      #   uses : fjogeleit/http-request-action@v1
+      #   with : 
+      #     url : 'https://jsonformatter.curiousconcept.com/process'
+      #     method : 'POST'
+      #     contentType : 'multipart/form-data'
+      #     data : '{"data":{"Much JSON!":"So Wow!"},"jsontemplate":1,"jsonspec":4,"jsonfix":"on","version":2}'
+      # - name : read Response
+      #   run : |
+      #     echo ${{ steps.formatJson.outputs.response }}
       
-      - id : fpl
-        uses : fjogeleit/http-request-action@v1
+      # - id : fpl
+      #   uses : fjogeleit/http-request-action@v1
+      #   with : 
+      #     url : 'https://fantasy.premierleague.com/api/bootstrap-static/'
+      #     method : 'GET'
+      # - name : read response as Json
+      #   run : |
+      #     echo ${{ steps.fpl.outputs.response }}
+
+      - id : poll
+        uses : 'manibharathi13/demo-javascript-action'
         with : 
-          url : 'https://fantasy.premierleague.com/api/bootstrap-static/'
-          method : 'GET'
-      - name : read response as Json
+          name : 'Mani Bharathi'
+      - name : Display Response
         run : |
-          echo ${{ steps.fpl.outputs.response }}
+          echo ${{ steps.poll.outputs.response }}
