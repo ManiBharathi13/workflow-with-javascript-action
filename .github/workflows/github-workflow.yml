@@ -25,7 +25,7 @@ jobs:
       #     echo ${{ steps.fpl.outputs.response }}
 
       - id : poll
-        uses : manibharathi13/demo-javascript-action@v1
+        uses : manibharathi13/demo-javascript-action@First-Action
         with : 
           name : 'Mani Bharathi'
       - name : Display Response
