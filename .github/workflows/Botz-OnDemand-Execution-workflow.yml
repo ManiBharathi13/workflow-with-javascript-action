@@ -8,7 +8,7 @@ jobs:
         uses : manibharathi13/demo-javascript-action@v1.0.0
         with : 
           username : 'mani.s'
-          secret : ${{secrets.BotzSecret}}
+          secret : ${{secrets.BOTZ_SECRET}}
           onDemandScheduleName : 'TestSchedule'
           interval : 5
           timeout : 3600
