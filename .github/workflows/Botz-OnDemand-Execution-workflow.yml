@@ -1,0 +1,19 @@
+name : botz-ondemand-execution-workflow
+on : workflow_dispatch
+jobs:
+  execute-ondemand-schedule:
+    runs-on : ubuntu-latest
+    steps : 
+      - id : poll
+        uses : manibharathi13/demo-javascript-action@v1.0.0
+        with : 
+          username : 'mani.s'
+          secret : ${{secrets.BOTZ_SECRET}}
+          onDemandScheduleName : 'TestSchedule'
+          interval : 5
+          timeout : 3600
+          botzProjectId : 6
+          botzAccountId : 2
+      - name : Display Execution Status
+        run : |
+          echo ${{ steps.poll.outputs.response }}
