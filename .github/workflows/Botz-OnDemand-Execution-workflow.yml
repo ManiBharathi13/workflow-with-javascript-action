@@ -16,4 +16,4 @@ jobs:
           botzAccountId : 2
       - name : Display Execution Status
         run : |
-          echo ${{ steps.poll.outputs.response }}
+          echo ${{ steps.poll.outputs.status }}
